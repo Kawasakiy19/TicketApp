@@ -13,10 +13,10 @@ namespace NewTicketWPF
         {
             data = data.LoadPData();
         }
-        public PData(int index, string name)
+        public PData(int index, string pName)
         {
             Index = index;
-            PName = name;
+            PName = pName;
         }
 
         public int Index { get; set; }
