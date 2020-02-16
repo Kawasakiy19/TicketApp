@@ -22,7 +22,8 @@
                     </MenuItem>
                 </MenuItem>
                 <MenuItem Header="Profile" >
-                    <MenuItem Header="New" />
+                    <MenuItem Header="New" Click="NewProfileClick" />
+                    <MenuItem Header="Select" Click="SelectProfileClick"/>
 
                 </MenuItem>
             </Menu>

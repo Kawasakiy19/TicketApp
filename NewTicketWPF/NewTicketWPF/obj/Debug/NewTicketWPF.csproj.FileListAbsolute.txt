@@ -62,3 +62,7 @@ C:\Users\OverGaming\Source\Repos\Kawasakiy19\Kawasakiy19\TicketApp\NewTicketWPF\
 C:\Users\OverGaming\Source\Repos\Kawasakiy19\Kawasakiy19\TicketApp\NewTicketWPF\NewTicketWPF\obj\Debug\NewTicketWPF.csproj.GenerateResource.cache
 C:\Users\OverGaming\Source\Repos\Kawasakiy19\Kawasakiy19\TicketApp\NewTicketWPF\NewTicketWPF\obj\Debug\NewTicketWPF.exe
 C:\Users\OverGaming\Source\Repos\Kawasakiy19\Kawasakiy19\TicketApp\NewTicketWPF\NewTicketWPF\obj\Debug\NewTicketWPF.pdb
+C:\Users\OverGaming\Source\Repos\Kawasakiy19\Kawasakiy19\TicketApp\NewTicketWPF\NewTicketWPF\obj\Debug\CreateProfileWindow.g.cs
+C:\Users\OverGaming\Source\Repos\Kawasakiy19\Kawasakiy19\TicketApp\NewTicketWPF\NewTicketWPF\obj\Debug\CreateProfileWindow.baml
+C:\Users\bened\Source\Repos\Kawasakiy19\TicketApp\NewTicketWPF\NewTicketWPF\obj\Debug\CreateProfileWindow.g.cs
+C:\Users\bened\Source\Repos\Kawasakiy19\TicketApp\NewTicketWPF\NewTicketWPF\obj\Debug\CreateProfileWindow.baml
