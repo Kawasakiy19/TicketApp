@@ -105,7 +105,7 @@ namespace NewTicketWPF
                 string[] pr = null;
                 foreach (var prop in lines)
                 {
-                    if (prop != "")
+                    if (prop == "")
                     {
                         break;
                     }    

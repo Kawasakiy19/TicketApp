@@ -6,20 +6,43 @@
         xmlns:local="clr-namespace:NewTicketWPF"
         mc:Ignorable="d"
         Title="Ticket App" Height="583" Width="800" WindowStartupLocation="CenterScreen" Visibility="Visible" ResizeMode="CanMinimize" ShowActivated="False">
-    <Border Margin="8,8,8,8">
+    <Border>
         <StackPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_File">
+                    <MenuItem Header="_Save"/>
+                    <Separator />
+                    <MenuItem Header="_Exit"/>
+                </MenuItem>
+                <MenuItem Header="Profile">
+                    <MenuItem Header="New" />
+                    <MenuItem Header="Select" >
+                        <MenuItem.ItemTemplate>
+                            <DataTemplate>
+                                <MenuItem Header="Profile1">
+
+                                </MenuItem>
+                            </DataTemplate>
+                        </MenuItem.ItemTemplate>
+                        <MenuItem Header="Profile1">
+                            
+                        </MenuItem>
+                    </MenuItem>
+                </MenuItem>
+            </Menu>
             <Grid Width="780" Height="420" ShowGridLines="False" >
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="1.8*"/>
+                    <ColumnDefinition Width="38*"/>
+                    <ColumnDefinition Width="241*"/>
+                    <ColumnDefinition Width="501*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0.08*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Column="1" Grid.Row="0" Text="Log" Margin="10 5 5 5" FontSize="16" />
-                <TextBlock Grid.Column="0" Grid.Row="0" Text="Tickets" Margin="10 5 5 5" FontSize="16" />
-                <TextBlock Grid.Column="1" Grid.Row="1" Name="Log" Text="" Padding="5,5,5,5" Margin="5,5,5,5" FontSize="14" TextWrapping="Wrap" >
+                <TextBlock Grid.Column="2" Grid.Row="0" Text="Log" Margin="10 5 5 5" FontSize="16" />
+                <TextBlock Grid.Column="0" Grid.Row="0" Text="Tickets" Margin="10 5 5 5" FontSize="16" Grid.ColumnSpan="2" />
+                <TextBlock Grid.Column="2" Grid.Row="1" Name="Log" Text="" Padding="5,5,5,5" Margin="5,5,5,5" FontSize="14" TextWrapping="Wrap" >
                     <TextBlock.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="LightGray" Offset="1"/>
@@ -27,7 +50,7 @@
                         </LinearGradientBrush>
                     </TextBlock.Background>
                 </TextBlock>
-                <ListBox HorizontalAlignment="Stretch" Name="TList" Grid.Row="1" Grid.Column="0" Margin="10,10,10,10" SelectionMode="Extended" >
+                <ListBox HorizontalAlignment="Stretch" Name="TList" Grid.Row="1" Grid.Column="0" Margin="10,10,10,10" SelectionMode="Extended" Grid.ColumnSpan="2" >
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Grid Margin="0,2" >

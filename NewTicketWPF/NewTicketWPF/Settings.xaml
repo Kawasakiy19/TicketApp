@@ -18,7 +18,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <ComboBox Grid.Column="1" Grid.Row="1" Margin="3 2 3 2" Name="ProfileBox" Padding="1,2,1,2" ItemsSource="{Binding Path=ProfileName}" ItemStringFormat="{Binding Path=ProfileName}" />
+            <ComboBox Grid.Column="1" Grid.Row="1" Margin="2,0,4,4" Name="ProfileBox" Padding="1,2,1,2" ItemsSource="{Binding Path=ProfileName}" ItemStringFormat="{Binding Path=ProfileName}" />
             <Label Grid.Column="0" Grid.Row="1" Margin="3 0 3 0" Content="Profile" FontSize="12" />
             <Button Grid.Column="0" Grid.Row="2" Name="PRenameBtn" Content="Rename" FontSize="11" Margin="2,2,2,2" Click="ProfileRename" />
             <TextBox Grid.Column="1" Grid.Row="2" Name="RenameField" Margin="2,2,2,2" KeyDown="RenameField_KeyDown" />
