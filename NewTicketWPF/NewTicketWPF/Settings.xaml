@@ -41,7 +41,7 @@
             <TextBlock Grid.Column="0" Grid.Row="2" Text="Maximum Tickets" FontSize="11" Margin="3,5,3,5" />
             <ComboBox Grid.Column="1" Grid.Row="2" Name="TMaximumAmount" Padding="2,2,2,2" Margin="3,5,3,5" />
         </Grid>
-        <Button Grid.Column="0" Grid.Row="1" Name="NewProfileBtn" Content="Create New Profile" FontSize="11" Margin="10,5,10,5" Click="CreateNewProfile" /> 
+        <Button Grid.Column="0" Grid.Row="1" Name="NewProfileBtn" Content="Create New Profile" FontSize="11" Margin="10,5,10,5" Click="CreateNewProfile" />
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>

@@ -102,6 +102,10 @@ namespace NewTicketWPF
             TList.ItemsSource = profile.SetProfile.tickets;
             TList.Items.Refresh();
         }
+        public void SelectProfileClick(object sender, RoutedEventArgs e)
+        {
+
+        }
 
     }
 }
