@@ -21,6 +21,6 @@ namespace NewTicketWPF
 
         public int Index { get; set; }
         public string PName { get; set; }
-        //asdasdasd
+        
     }
 }
