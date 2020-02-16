@@ -5,26 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NewTicketWPF"
         mc:Ignorable="d"
-        Title="Ticket App" Height="590" Width="800" WindowStartupLocation="CenterScreen" Visibility="Visible" ResizeMode="CanMinimize" ShowActivated="False">
-    <Border>
-        <StackPanel>
-            <Menu Background="White">
+        Title="Ticket App" Height="520" Width="800" WindowStartupLocation="CenterScreen" Visibility="Visible" ResizeMode="CanMinimize" ShowActivated="False" Background="White" Foreground="Black" BorderBrush="White" OpacityMask="White">
+    <Window.Resources>
+        <Color x:Key="Color1">#FF474747</Color>
+    </Window.Resources>
+
+    <Border Background="White">
+        <StackPanel Background="White">
+            <Menu Background="White" Name="menu">
                 <MenuItem Header="_File">
-                    <MenuItem Header="_Save"/>
-                    <MenuItem Header="Load"/>
-                    <Separator />
-                    <MenuItem Header="_Exit"/>
+                    <MenuItem Header="Save" Click="SaveClick"/>
+                    <MenuItem Header="SaveAs" Click="SaveasClick"/>
+                    <MenuItem Header="_Exit" Click="ExitClick"/>
                 </MenuItem>
                 <MenuItem Header="View">
                     <MenuItem Header="Theme">
-                        <MenuItem Header="Dark"/>
-                        <MenuItem Header="White"/>
+                        <MenuItem Header="Dark" Click="ThemeDark"/>
+                        <MenuItem Header="White" Click="ThemeWhite"/>
                     </MenuItem>
                 </MenuItem>
                 <MenuItem Header="Profile" >
-                    <MenuItem Header="New" Click="NewProfileClick" />
+                    <MenuItem Header="New" Click="NewProfileClick"/>
                     <MenuItem Header="Select" Click="SelectProfileClick"/>
-
+                    <MenuItem Header="Rename" Click="RenameProfileClick"/>
+                    <MenuItem Header="Delete" Click="DeleteProfileClick"/>
+                    <MenuItem Header="Regenerate" Click="RegenerateTicketClick"/>
                 </MenuItem>
             </Menu>
             <Grid Width="780" Height="420" ShowGridLines="False" >
@@ -41,8 +46,7 @@
                 <TextBlock Grid.Column="2" Grid.Row="0" Text="Log" Margin="10,5,0,5" FontSize="16" />
                 <TextBlock Grid.Column="0" Grid.Row="0" Text="Tickets" Margin="10,5" FontSize="16" Grid.ColumnSpan="2" />
                 <TextBlock Grid.Column="2" Grid.Row="1" Name="Log" Text="" Padding="5,5,5,5" Margin="5,5,5,5" FontSize="14" TextWrapping="Wrap" Grid.RowSpan="2"  Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" />
-                <ListBox HorizontalAlignment="Stretch" Name="TList" Grid.Row="1" Grid.Column="0" Margin="10
-                         ,5,10,5" SelectionMode="Extended" Grid.ColumnSpan="2" Grid.RowSpan="2" >
+                <ListBox HorizontalAlignment="Stretch" Name="TList" Grid.Row="1" Padding="5,5,5,5" Grid.Column="0" Margin="10,5,10,5" SelectionMode="Extended" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="#FFECECEC" BorderBrush="White" >
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Grid Margin="0,2" >
@@ -55,43 +59,22 @@
                                 <TextBlock Grid.Column="0" Padding="3,3,3,3" Margin="2,0,2,0" Text="{Binding IDS}"/>
                                 <TextBlock Grid.Column="1" Padding="3,3,3,3" Margin="2,0,2,0" Text="{Binding GetStatus}"/>
                                 <TextBlock Grid.Column="2" Padding="3,3,3,3" Margin="2,0,2,0" Text="{Binding GetSoldState}"/>
-                                <Button Grid.Column="3" Name="btn" Padding="3,3,3,3" HorizontalAlignment="Right" Margin="2,0,2,0" Content="Sell" Click="Sell_ListClick" />
+                                <Button Grid.Column="3" Name="btn" Padding="3,3,3,3" HorizontalAlignment="Right" Margin="2,0,2,0" Content="Sell" Click="Sell_ListClick" Background="#FFB4B4B4" />
 
                             </Grid>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
             </Grid>
-            <Grid Height="104" Margin="10,0,10,10" >
+            <Grid Height="37">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="261*"/>
-                    <ColumnDefinition Width="0*"/>
-                    <ColumnDefinition Width="15*"/>
-                    <ColumnDefinition Width="496*"/>
+                    <ColumnDefinition Width="277*"/>
+                    <ColumnDefinition Width="517*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="103*" />
+                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
-                <ListBox Name="ListPf" Grid.Column="1" Grid.Row="0" Margin="0,3,0,3" ItemsSource="{Binding Path=ProfileName}" />
-                <Grid Grid.Column="4">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <Button x:Name="Wipe" Grid.Column="2" Grid.Row="0" Content="Wipe"  Margin="3,3,3,3" />
-                    <Button x:Name="Sell" Grid.Column="1" Grid.Row="0" Content="Sell" Margin="3,3,3,3" />
-                    <Button x:Name="Use" Grid.Column="0" Grid.Row="0" Content="Use" Margin="3,3,3,3" />
-                    <Button x:Name="Load" Grid.Column="0" Grid.Row="1" Content="Load" Margin="3,3,3,3"/>
-                    <Button x:Name="Delete" Grid.Column="1" Grid.Row="1" Content="Delete" Margin="3,3,3,3"/>
-                    <Button x:Name="Rename" Grid.Column="2" Grid.Row="1" Content="Rename" Margin="3,3,3,3"/>
-                </Grid>
+                <Button Content="Ticket Validator" Name="ValidatorBtn" Margin="12,3,3,3" />
             </Grid>
         </StackPanel>
     </Border>

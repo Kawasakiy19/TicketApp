@@ -24,6 +24,8 @@ namespace NewTicketWPF
         CreateProfileWindow objNewProfileWindow;
         Profile currentProfile;
         PData pData;
+        RenameWindow objRenameWindow;
+        SaveFileDialogSample objSaveFileDialogSample;
         public MainWindow()
          {
             InitializeComponent();
@@ -107,5 +109,52 @@ namespace NewTicketWPF
 
         }
 
+        protected void RenameProfileClick(object sender, RoutedEventArgs e)
+        {
+            objRenameWindow = new RenameWindow();
+            objRenameWindow.SetCreatingForm = this;
+            objRenameWindow.Show();
+            IsEnabled = false;
+        }
+        public void ReloadAllProfile()
+        {
+            
+        }
+        public void DeleteProfileClick(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ThemeDark(object sender, RoutedEventArgs e)
+        {
+            this.Background = Brushes.DimGray;
+            menu.Background = Brushes.DimGray;
+            ValidatorBtn.Background = Brushes.Gray;
+            TList.Background = Brushes.Gray;
+            TList.BorderBrush = Brushes.Gray;
+            Log.Background = Brushes.Gray;
+        }
+
+        protected void ThemeWhite(object sender, RoutedEventArgs e)
+        {
+            this.Background = Brushes.White;
+            menu.Background = Brushes.White;
+            ValidatorBtn.Background = Brushes.WhiteSmoke;
+            TList.BorderBrush = Brushes.WhiteSmoke;  
+            TList.Background = Brushes.WhiteSmoke;
+            Log.Background = Brushes.WhiteSmoke;
+        }
+       
+
+        protected void ExitClick(object sender, RoutedEventArgs e)
+        {
+            OnClosed(e);
+        }
+
+        protected void SaveasClick(object sender, RoutedEventArgs e)
+        {
+            objSaveFileDialogSample = new SaveFileDialogSample();
+            objSaveFileDialogSample.Show();
+        }
     }
 }

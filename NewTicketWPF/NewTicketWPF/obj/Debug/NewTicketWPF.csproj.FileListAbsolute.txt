@@ -66,3 +66,7 @@ C:\Users\OverGaming\Source\Repos\Kawasakiy19\Kawasakiy19\TicketApp\NewTicketWPF\
 C:\Users\OverGaming\Source\Repos\Kawasakiy19\Kawasakiy19\TicketApp\NewTicketWPF\NewTicketWPF\obj\Debug\CreateProfileWindow.baml
 C:\Users\bened\Source\Repos\Kawasakiy19\TicketApp\NewTicketWPF\NewTicketWPF\obj\Debug\CreateProfileWindow.g.cs
 C:\Users\bened\Source\Repos\Kawasakiy19\TicketApp\NewTicketWPF\NewTicketWPF\obj\Debug\CreateProfileWindow.baml
+C:\Users\bened\Source\Repos\Kawasakiy19\TicketApp\NewTicketWPF\NewTicketWPF\obj\Debug\RenameWindow.g.cs
+C:\Users\bened\Source\Repos\Kawasakiy19\TicketApp\NewTicketWPF\NewTicketWPF\obj\Debug\RenameWindow.baml
+C:\Users\bened\Source\Repos\Kawasakiy19\TicketApp\NewTicketWPF\NewTicketWPF\obj\Debug\BrowserWindow.baml
+C:\Users\bened\Source\Repos\Kawasakiy19\TicketApp\NewTicketWPF\NewTicketWPF\obj\Debug\BrowserWindow.g.cs
