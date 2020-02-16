@@ -74,8 +74,6 @@ namespace NewTicketWPF
         public void changeContentOfPData(PData pData)
         {
             this.pData = pData;
-            currentProfile = currentProfile.LoadSelectedProfile(pData);
-            TList.Items.Refresh();
         }
 
     }

@@ -268,7 +268,6 @@ namespace NewTicketWPF
             selectedProfile = pf[ProfileBox.SelectedIndex];
             selectedProfile.SavePData(ProfileBox.SelectedIndex);
             mainWindow.IsEnabled = true;
-            mainWindow.Show();
             Close();
         }
 
