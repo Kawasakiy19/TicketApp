@@ -55,6 +55,7 @@
                                 <TextBlock Grid.Column="1" Padding="3,3,3,3" Margin="2,0,2,0" Text="{Binding GetStatus}"/>
                                 <TextBlock Grid.Column="2" Padding="3,3,3,3" Margin="2,0,2,0" Text="{Binding GetSoldState}"/>
                                 <Button Grid.Column="3" Name="btn" Padding="3,3,3,3" HorizontalAlignment="Right" Margin="2,0,2,0" Content="Sell" Click="Sell_ListClick" />
+                                
                             </Grid>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
