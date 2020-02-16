@@ -17,20 +17,10 @@ namespace NewTicketWPF
         {
             Index = index;
             PName = pname;
-
-
-
-
-
-
-
-
-
-
-
         }
 
         public int Index { get; set; }
         public string PName { get; set; }
+        //asdasdasd
     }
 }
