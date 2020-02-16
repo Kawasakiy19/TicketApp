@@ -105,6 +105,10 @@ namespace NewTicketWPF
                 string[] pr = null;
                 foreach (var prop in lines)
                 {
+                    if (prop != "")
+                    {
+                        break;
+                    }    
                     pr = prop.Split(',');
                     pr[0] = pr[0].Substring(pr[0].IndexOf(':') + 1);
                     tm.tickets.Add(new Ticket(int.Parse(pr[0]), pr[1], bool.Parse(pr[2]), bool.Parse(pr[3])));

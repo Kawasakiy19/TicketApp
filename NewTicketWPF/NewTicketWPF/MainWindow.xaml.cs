@@ -24,7 +24,7 @@ namespace NewTicketWPF
         Profile currentProfile;
         PData pData;
         public MainWindow()
-        {
+         {
             InitializeComponent();
             pData = pData.LoadPData();
             currentProfile = currentProfile.LoadSelectedProfile(pData);

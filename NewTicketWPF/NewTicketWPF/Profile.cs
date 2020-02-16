@@ -55,7 +55,7 @@ namespace NewTicketWPF
         {
             try
             {
-                string path = "Profiles\\ " + ProfileName + ".csv";
+                string path = "Profiles\\" + ProfileName + ".csv";
                 string savingLine = ProfileName + ":";
                 int index = 0;
                 foreach (var ticket in _tm.tickets)
