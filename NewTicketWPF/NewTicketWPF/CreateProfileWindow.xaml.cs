@@ -20,12 +20,44 @@ namespace NewTicketWPF
     /// </summary>
     public partial class CreateProfileWindow : Window
     {
-        List<Profile> pf;
+        Profile pf;
+        MainWindow mainWindow;
 
         public CreateProfileWindow()
         {
             InitializeComponent();
-            pf = new List<Profile>();
+            pf = new Profile();
+            Window v = new Window();
+            TTypeCB.Items.Add("Default");
+            TTypeCB.Items.Add("6 number combination");
+            TTypeCB.Items.Add("7 number combination");
+            TTypeCB.Items.Add("8 number combination");
+            TTypeCB.SelectedIndex = 0;
+            TMaximumAmount.Items.Add("Default");
+            TMaximumAmount.Items.Add("50 Tickets");
+            TMaximumAmount.Items.Add("100 Tickets");
+            TMaximumAmount.Items.Add("300 Tickets");
+            TMaximumAmount.Items.Add("500 Tickets");
+            TMaximumAmount.Items.Add("1000 Tickets");
+            TMaximumAmount.Items.Add("3000 Tickets");
+            TMaximumAmount.Items.Add("5000 Tickets");
+            TMaximumAmount.Items.Add("Custom");
+            TMaximumAmount.SelectedIndex = 0;
+        }
+
+        public MainWindow SetCreatingForm
+        {
+            set
+            {
+                mainWindow = value;
+            }
+        }
+        public CreateProfileWindow GetCreatingForm
+        {
+            get
+            {
+                return this;
+            }
         }
 
         private void CreateNewProfile(object sender, RoutedEventArgs e)
@@ -79,13 +111,16 @@ namespace NewTicketWPF
             }
             if (ProfileInput.Text != "")
             {
-                pf.Add(new Profile(ProfileInput.Text, type, max));
+                pf = new Profile(ProfileInput.Text, type, max);
             }
             else
             {
-                pf.Add(new Profile(DefaultProfileNamer(), type, max));
+                pf = new Profile(DefaultProfileNamer(), type, max);
             }
-            pf.Last().SaveProfile();
+            mainWindow.NewProfileChangesSet(pf);
+            mainWindow.IsEnabled = true;
+            pf.SaveProfile();
+            Close();
         }
 
         public string DefaultProfileNamer()
@@ -110,6 +145,13 @@ namespace NewTicketWPF
                 MessageBox.Show("Maximum profiles reached (\"100 Profiles\").");
                 return null;
             }
+        }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            mainWindow.NewProfileChangesSet(pf);
+            mainWindow.IsEnabled = true;
+            base.OnClosed(e);
         }
     }
 }
