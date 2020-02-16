@@ -21,7 +21,6 @@ namespace NewTicketWPF
     public partial class MainWindow : Window
     {
         Settings objSettings;
-        CreateProfileWindow objNewProfileWindow;
         Profile currentProfile;
         PData pData;
         public MainWindow()
@@ -47,10 +46,6 @@ namespace NewTicketWPF
             if (objSettings != null)
             {
                 objSettings.Close();
-            }
-            if (objNewProfileWindow != null)
-            {
-                objNewProfileWindow.Close();
             }
             Close();
         }
@@ -80,26 +75,6 @@ namespace NewTicketWPF
         {
             this.pData = pData;
             currentProfile = currentProfile.LoadSelectedProfile(pData);
-            TList.Items.Refresh();
-        }
-
-        public void NewProfileClick(object sender, RoutedEventArgs e)
-        {
-            objNewProfileWindow = new CreateProfileWindow();
-            objNewProfileWindow.SetCreatingForm = this;
-            IsEnabled = false;
-            objNewProfileWindow.Show();
-        }
-
-        public void RegenerateTicketClick(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        public void NewProfileChangesSet(Profile profile)
-        {
-            currentProfile = profile;
-            TList.ItemsSource = profile.SetProfile.tickets;
             TList.Items.Refresh();
         }
 
